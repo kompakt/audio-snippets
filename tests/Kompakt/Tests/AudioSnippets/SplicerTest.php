@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the kompakt/audio-tools package.
+ * This file is part of the kompakt/audio-snippets package.
  *
  * (c) Christian Hoegl <chrigu@sirprize.me>
  *
