@@ -1,0 +1,5 @@
+vendor
+composer.phar
+tests/_temp
+tests/config.php
+!*.gitkeep

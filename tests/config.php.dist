@@ -1,0 +1,13 @@
+<?php
+
+/*
+ * This file is part of the kompakt/audio-tools package.
+ *
+ * (c) Christian Hoegl <chrigu@sirprize.me>
+ *
+ */
+
+define('TESTS_KOMPAKT_AUDIOSNIPPETS_DELTA', 0.0000001);
+define('TESTS_KOMPAKT_AUDIOSNIPPETS_TEMP_DIR', __DIR__ . '/_temp');
+define('TESTS_KOMPAKT_AUDIOSNIPPETS_SOX', 'sox');
+define('TESTS_KOMPAKT_AUDIOSNIPPETS_SOXI', 'soxi');
