@@ -7,6 +7,12 @@
     "authors": [
         {"name": "Christian Hoegl", "email": "chrigu@kompakt.fm"}
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github-kompakt:kompakt/audio-tools.git"
+        }
+    ],
     "require": {
         "php": ">=5.3.2",
         "kompakt/audio-tools": "dev-master"
