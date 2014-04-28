@@ -22,14 +22,10 @@ class TrimmerTest extends \PHPUnit_Framework_TestCase
         $tmpDir = freshTmpSubDir(__METHOD__);
         $inFile = sprintf('%s/_files/TrimmerTest/05-seconds.wav', __DIR__);
         $outFile = sprintf('%s/05-seconds.wav', $tmpDir);
-        $soxiFactory = new SoxiFactory(new SoxiRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOXI));
-
-        $trimmer = new Trimmer(new SoxRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOX), $soxiFactory);
+        
+        $trimmer = $this->getTrimmer();
         $trimmer->trim($inFile, $outFile, 10);
         $this->assertFileExists($outFile);
-
-        $soxi = $soxiFactory->getInstance($outFile);
-        $this->assertEquals(5, $soxi->getDuration(), "", TESTS_KOMPAKT_AUDIOSNIPPETS_DELTA);
     }
 
     public function test10Seconds()
@@ -38,14 +34,10 @@ class TrimmerTest extends \PHPUnit_Framework_TestCase
         $tmpDir = freshTmpSubDir(__METHOD__);
         $inFile = sprintf('%s/_files/TrimmerTest/10-seconds.wav', __DIR__);
         $outFile = sprintf('%s/10-seconds.wav', $tmpDir);
-        $soxiFactory = new SoxiFactory(new SoxiRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOXI));
-
-        $trimmer = new Trimmer(new SoxRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOX), $soxiFactory);
+        
+        $trimmer = $this->getTrimmer();
         $trimmer->trim($inFile, $outFile, 10);
         $this->assertFileExists($outFile);
-
-        $soxi = $soxiFactory->getInstance($outFile);
-        $this->assertEquals(10, $soxi->getDuration(), "", TESTS_KOMPAKT_AUDIOSNIPPETS_DELTA);
     }
 
     public function test30Seconds()
@@ -54,13 +46,17 @@ class TrimmerTest extends \PHPUnit_Framework_TestCase
         $tmpDir = freshTmpSubDir(__METHOD__);
         $inFile = sprintf('%s/_files/TrimmerTest/30-seconds.wav', __DIR__);
         $outFile = sprintf('%s/30-seconds.wav', $tmpDir);
-        $soxiFactory = new SoxiFactory(new SoxiRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOXI));
-
-        $trimmer = new Trimmer(new SoxRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOX), $soxiFactory);
+        
+        $trimmer = $this->getTrimmer();
         $trimmer->trim($inFile, $outFile, 10);
         $this->assertFileExists($outFile);
+    }
 
-        $soxi = $soxiFactory->getInstance($outFile);
-        $this->assertEquals(10, $soxi->getDuration(), "", TESTS_KOMPAKT_AUDIOSNIPPETS_DELTA);
+    protected function getTrimmer()
+    {
+        return new Trimmer(
+            new SoxRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOX),
+            new SoxiFactory(new SoxiRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOXI))
+        );
     }
 }

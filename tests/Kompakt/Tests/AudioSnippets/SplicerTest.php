@@ -23,7 +23,7 @@ class SplicerTest extends \PHPUnit_Framework_TestCase
         $inFile = sprintf('%s/_files/SplicerTest/30-seconds.wav', __DIR__);
         $outFile = sprintf('%s/30-seconds.wav', $tmpDir);
 
-        $splicer = new Splicer(new SoxRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOX), new SoxiFactory(new SoxiRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOXI)), $tmpDir);
+        $splicer = $this->getSplicer($tmpDir);
         $splicer->splice($inFile, $outFile, 45, 1, $splicer->getVinylSplices());
         $this->assertFileExists($outFile);
     }
@@ -35,7 +35,7 @@ class SplicerTest extends \PHPUnit_Framework_TestCase
         $inFile = sprintf('%s/_files/SplicerTest/60-seconds.wav', __DIR__);
         $outFile = sprintf('%s/60-seconds.wav', $tmpDir);
 
-        $splicer = new Splicer(new SoxRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOX), new SoxiFactory(new SoxiRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOXI)), $tmpDir);
+        $splicer = $this->getSplicer($tmpDir);
         $splicer->splice($inFile, $outFile, 45, 1, $splicer->getVinylSplices());
         $this->assertFileExists($outFile);
     }
@@ -47,7 +47,7 @@ class SplicerTest extends \PHPUnit_Framework_TestCase
         $inFile = sprintf('%s/_files/SplicerTest/70-seconds.wav', __DIR__);
         $outFile = sprintf('%s/70-seconds.wav', $tmpDir);
 
-        $splicer = new Splicer(new SoxRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOX), new SoxiFactory(new SoxiRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOXI)), $tmpDir);
+        $splicer = $this->getSplicer($tmpDir);
         $splicer->splice($inFile, $outFile, 45, 1, $splicer->getVinylSplices());
         $this->assertFileExists($outFile);
     }
@@ -59,7 +59,7 @@ class SplicerTest extends \PHPUnit_Framework_TestCase
         $inFile = sprintf('%s/_files/SplicerTest/120-seconds.wav', __DIR__);
         $outFile = sprintf('%s/120-seconds.wav', $tmpDir);
 
-        $splicer = new Splicer(new SoxRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOX), new SoxiFactory(new SoxiRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOXI)), $tmpDir);
+        $splicer = $this->getSplicer($tmpDir);
         $splicer->splice($inFile, $outFile, 45, 1, $splicer->getVinylSplices());
         $this->assertFileExists($outFile);
     }
@@ -71,8 +71,17 @@ class SplicerTest extends \PHPUnit_Framework_TestCase
         $inFile = sprintf('%s/_files/SplicerTest/120-seconds.aiff', __DIR__);
         $outFile = sprintf('%s/120-seconds.wav', $tmpDir);
 
-        $splicer = new Splicer(new SoxRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOX), new SoxiFactory(new SoxiRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOXI)), $tmpDir);
+        $splicer = $this->getSplicer($tmpDir);
         $splicer->splice($inFile, $outFile, 45, 1, $splicer->getVinylSplices());
         $this->assertFileExists($outFile);
+    }
+
+    protected function getSplicer($tmpDir)
+    {
+        return new Splicer(
+            new SoxRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOX),
+            new SoxiFactory(new SoxiRunner(TESTS_KOMPAKT_AUDIOSNIPPETS_SOXI)),
+            $tmpDir
+        );
     }
 }
