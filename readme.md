@@ -9,8 +9,10 @@ Generate audio snippets from the command line
 + `curl -sS https://getcomposer.org/installer | php`
 + `php composer.phar install`
 
-## Test
+## Tests
 
++ `cp tests/config.php.dist config.php`
++ Adjust `config.php` as needed
 + `vendor/bin/phpunit`
 
 ## License
