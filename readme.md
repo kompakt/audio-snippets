@@ -14,6 +14,7 @@ Generate audio snippets from the command line
 + `cp tests/config.php.dist config.php`
 + Adjust `config.php` as needed
 + `vendor/bin/phpunit`
++ `vendor/bin/phpunit --coverage-html tests/_coverage`
 
 ## License
 
