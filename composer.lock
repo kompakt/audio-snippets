@@ -11,7 +11,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github-kompakt:kompakt/audio-tools.git",
-                "reference": "ca794c4143b2830d6414ea0c9587e989ebcbf560"
+                "reference": "8c5068a8669c5d29505109e166c45fc4b2da2b11"
             },
             "require": {
                 "php": ">=5.3.2"
@@ -37,7 +37,7 @@
                 "commands",
                 "website"
             ],
-            "time": "2014-04-24 12:22:51"
+            "time": "2014-04-30 09:46:08"
         }
     ],
     "packages-dev": [
@@ -287,20 +287,22 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "3.7.35",
+            "version": "3.7.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "83f9537e46346f75ed6925441ac259453213c7cc"
+                "reference": "1735d588c9f35bd8686cae0208d8adde77b45365"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/83f9537e46346f75ed6925441ac259453213c7cc",
-                "reference": "83f9537e46346f75ed6925441ac259453213c7cc",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1735d588c9f35bd8686cae0208d8adde77b45365",
+                "reference": "1735d588c9f35bd8686cae0208d8adde77b45365",
                 "shasum": ""
             },
             "require": {
+                "ext-ctype": "*",
                 "ext-dom": "*",
+                "ext-json": "*",
                 "ext-pcre": "*",
                 "ext-reflection": "*",
                 "ext-spl": "*",
@@ -316,9 +318,6 @@
                 "pear-pear.php.net/pear": "1.9.4"
             },
             "suggest": {
-                "ext-json": "*",
-                "ext-simplexml": "*",
-                "ext-tokenizer": "*",
                 "phpunit/php-invoker": "~1.1"
             },
             "bin": [
@@ -357,7 +356,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-04-21 06:25:54"
+            "time": "2014-04-29 07:24:10"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -410,17 +409,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.4.3",
+            "version": "v2.4.4",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "77a41c2835ab7cfe8bf6d15e25d3af8f3eb3bacd"
+                "reference": "65539ecde838f9c0d18b006b2101e3deb4b5c9ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/77a41c2835ab7cfe8bf6d15e25d3af8f3eb3bacd",
-                "reference": "77a41c2835ab7cfe8bf6d15e25d3af8f3eb3bacd",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/65539ecde838f9c0d18b006b2101e3deb4b5c9ff",
+                "reference": "65539ecde838f9c0d18b006b2101e3deb4b5c9ff",
                 "shasum": ""
             },
             "require": {
@@ -455,7 +454,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-03-12 18:29:58"
+            "time": "2014-04-18 20:37:09"
         }
     ],
     "aliases": [
