@@ -13,13 +13,15 @@ use Kompakt\AudioSnippets\Trimmer;
 use Kompakt\AudioTools\Runner\SoxRunner;
 use Kompakt\AudioTools\Runner\SoxiRunner;
 use Kompakt\AudioTools\SoxiFactory;
+use Kompakt\TestHelper\Filesystem\TmpDir;
 
 class TrimmerTest extends \PHPUnit_Framework_TestCase
 {
     public function test5Seconds()
     {
         // this should be left untouched
-        $tmpDir = freshTmpSubDir(__METHOD__);
+        $tmpDir = $this->getTmpDir(__METHOD__);
+
         $inFile = sprintf('%s/_files/TrimmerTest/05-seconds.wav', __DIR__);
         $outFile = sprintf('%s/05-seconds.wav', $tmpDir);
         
@@ -31,7 +33,8 @@ class TrimmerTest extends \PHPUnit_Framework_TestCase
     public function test10Seconds()
     {
         // this should be faded in and out (and keep duration untouched)
-        $tmpDir = freshTmpSubDir(__METHOD__);
+        $tmpDir = $this->getTmpDir(__METHOD__);
+
         $inFile = sprintf('%s/_files/TrimmerTest/10-seconds.wav', __DIR__);
         $outFile = sprintf('%s/10-seconds.wav', $tmpDir);
         
@@ -43,13 +46,20 @@ class TrimmerTest extends \PHPUnit_Framework_TestCase
     public function test30Seconds()
     {
         // this should be trimmed to 10 seconds plus fade in and out
-        $tmpDir = freshTmpSubDir(__METHOD__);
+        $tmpDir = $this->getTmpDir(__METHOD__);
+
         $inFile = sprintf('%s/_files/TrimmerTest/30-seconds.wav', __DIR__);
         $outFile = sprintf('%s/30-seconds.wav', $tmpDir);
         
         $trimmer = $this->getTrimmer();
         $trimmer->trim($inFile, $outFile, 10);
         $this->assertFileExists($outFile);
+    }
+
+    protected function getTmpDir($method)
+    {
+        $tmpDir = new TmpDir(TESTS_KOMPAKT_AUDIOSNIPPETS_TEMP_DIR);
+        return $tmpDir->makeSubDir($tmpDir->prepareSubDirPath($method));
     }
 
     protected function getTrimmer()

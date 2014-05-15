@@ -1,24 +1,19 @@
 {
     "name": "kompakt/audio-snippets",
     "type": "library",
-    "description": "Kompakt Audio Snippets",
-    "keywords": ["website", "commands"],
-    "homepage": "http://www.kompakt.fm",
+    "description": "Audio snippet generator",
+    "keywords": ["audio"],
+    "license": "MIT",
     "authors": [
-        {"name": "Christian Hoegl", "email": "chrigu@kompakt.fm"}
-    ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "git@github-kompakt:kompakt/audio-tools.git"
-        }
+        { "name": "Christian Hoegl", "email": "chrigu@sirprize.me" }
     ],
     "require": {
         "php": ">=5.3.2",
-        "kompakt/audio-tools": "dev-master"
+        "kompakt/audio-tools": "0.0.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "3.7.*"
+        "phpunit/phpunit": "4.1.*",
+        "kompakt/test-helper": "0.0.*"
     },
     "autoload": {
         "psr-0": { "Kompakt\\AudioSnippets": "lib/" }

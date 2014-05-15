@@ -1,6 +1,6 @@
 # Kompakt Audio Snippets
 
-Generate audio snippets from the command line
+Audio snippet generator
 
 ## Install
 
@@ -18,4 +18,4 @@ Generate audio snippets from the command line
 
 ## License
 
-See LICENSE.
+kompakt/audio-snippets is licensed under the MIT license - see the LICENSE file for details

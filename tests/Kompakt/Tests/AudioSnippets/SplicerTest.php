@@ -13,13 +13,15 @@ use Kompakt\AudioSnippets\Splicer;
 use Kompakt\AudioTools\Runner\SoxRunner;
 use Kompakt\AudioTools\Runner\SoxiRunner;
 use Kompakt\AudioTools\SoxiFactory;
+use Kompakt\TestHelper\Filesystem\TmpDir;
 
 class SplicerTest extends \PHPUnit_Framework_TestCase
 {
     public function test30SecondsWav()
     {
         // should be left as is
-        $tmpDir = freshTmpSubDir(__METHOD__);
+        $tmpDir = $this->getTmpDir(__METHOD__);
+
         $inFile = sprintf('%s/_files/SplicerTest/30-seconds.wav', __DIR__);
         $outFile = sprintf('%s/30-seconds.wav', $tmpDir);
 
@@ -31,7 +33,8 @@ class SplicerTest extends \PHPUnit_Framework_TestCase
     public function test60SecondsWav()
     {
         // should be left as is
-        $tmpDir = freshTmpSubDir(__METHOD__);
+        $tmpDir = $this->getTmpDir(__METHOD__);
+
         $inFile = sprintf('%s/_files/SplicerTest/60-seconds.wav', __DIR__);
         $outFile = sprintf('%s/60-seconds.wav', $tmpDir);
 
@@ -43,7 +46,8 @@ class SplicerTest extends \PHPUnit_Framework_TestCase
     public function test70SecondsWav()
     {
         // should receive one splice in the middle
-        $tmpDir = freshTmpSubDir(__METHOD__);
+        $tmpDir = $this->getTmpDir(__METHOD__);
+
         $inFile = sprintf('%s/_files/SplicerTest/70-seconds.wav', __DIR__);
         $outFile = sprintf('%s/70-seconds.wav', $tmpDir);
 
@@ -55,7 +59,8 @@ class SplicerTest extends \PHPUnit_Framework_TestCase
     public function test120SecondsWav()
     {
         // should receive two splices
-        $tmpDir = freshTmpSubDir(__METHOD__);
+        $tmpDir = $this->getTmpDir(__METHOD__);
+
         $inFile = sprintf('%s/_files/SplicerTest/120-seconds.wav', __DIR__);
         $outFile = sprintf('%s/120-seconds.wav', $tmpDir);
 
@@ -67,13 +72,20 @@ class SplicerTest extends \PHPUnit_Framework_TestCase
     public function test120SecondsAiff()
     {
         // should receive two splices (and be converted to wav)
-        $tmpDir = freshTmpSubDir(__METHOD__);
+        $tmpDir = $this->getTmpDir(__METHOD__);
+
         $inFile = sprintf('%s/_files/SplicerTest/120-seconds.aiff', __DIR__);
         $outFile = sprintf('%s/120-seconds.wav', $tmpDir);
 
         $splicer = $this->getSplicer($tmpDir);
         $splicer->splice($inFile, $outFile, 45, 1, $splicer->getVinylSplices());
         $this->assertFileExists($outFile);
+    }
+
+    protected function getTmpDir($method)
+    {
+        $tmpDir = new TmpDir(TESTS_KOMPAKT_AUDIOSNIPPETS_TEMP_DIR);
+        return $tmpDir->makeSubDir($tmpDir->prepareSubDirPath($method));
     }
 
     protected function getSplicer($tmpDir)
