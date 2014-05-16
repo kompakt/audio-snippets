@@ -7,13 +7,12 @@
  *
  */
 
-namespace Kompakt\Tests\AudioSnippets;
+namespace Kompakt\AudioSnippets\Tests;
 
 use Kompakt\AudioSnippets\Trimmer;
 use Kompakt\AudioTools\Runner\SoxRunner;
 use Kompakt\AudioTools\Runner\SoxiRunner;
 use Kompakt\AudioTools\SoxiFactory;
-use Kompakt\TestHelper\Filesystem\TmpDir;
 
 class TrimmerTest extends \PHPUnit_Framework_TestCase
 {
@@ -58,7 +57,7 @@ class TrimmerTest extends \PHPUnit_Framework_TestCase
 
     protected function getTmpDir($method)
     {
-        $tmpDir = new TmpDir(TESTS_KOMPAKT_AUDIOSNIPPETS_TEMP_DIR);
+        $tmpDir = getTmpDir();
         return $tmpDir->makeSubDir($tmpDir->prepareSubDirPath($method));
     }
 

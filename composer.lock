@@ -3,33 +3,33 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "e3dc9b6caaf89c5c880acc9d5c99f1ca",
+    "hash": "e6c0ca2761699c61c689aa55aff5476d",
     "packages": [
         {
             "name": "kompakt/audio-tools",
-            "version": "v0.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kompakt/audio-tools.git",
-                "reference": "aa4fd9ae62254d38f2cd983e84f00e0cb1e90d6e"
+                "reference": "7f686fc0018d970a77f62d5bfddf204258056a05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kompakt/audio-tools/zipball/aa4fd9ae62254d38f2cd983e84f00e0cb1e90d6e",
-                "reference": "aa4fd9ae62254d38f2cd983e84f00e0cb1e90d6e",
+                "url": "https://api.github.com/repos/kompakt/audio-tools/zipball/7f686fc0018d970a77f62d5bfddf204258056a05",
+                "reference": "7f686fc0018d970a77f62d5bfddf204258056a05",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "kompakt/test-helper": "0.0.*",
+                "kompakt/test-helper": "dev-master",
                 "phpunit/phpunit": "4.1.*"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Kompakt\\AudioTools": "lib/"
+                "psr-4": {
+                    "Kompakt\\AudioTools\\": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -46,22 +46,22 @@
             "keywords": [
                 "audio"
             ],
-            "time": "2014-05-15 15:40:55"
+            "time": "2014-05-16 12:41:19"
         }
     ],
     "packages-dev": [
         {
             "name": "kompakt/test-helper",
-            "version": "v0.0.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kompakt/test-helper.git",
-                "reference": "5f538ce7f60a25d59ff694e38107050a8282e1d4"
+                "reference": "a3a2327d3b4128ee6c18bd605f62b3ee932cc56a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kompakt/test-helper/zipball/5f538ce7f60a25d59ff694e38107050a8282e1d4",
-                "reference": "5f538ce7f60a25d59ff694e38107050a8282e1d4",
+                "url": "https://api.github.com/repos/kompakt/test-helper/zipball/a3a2327d3b4128ee6c18bd605f62b3ee932cc56a",
+                "reference": "a3a2327d3b4128ee6c18bd605f62b3ee932cc56a",
                 "shasum": ""
             },
             "require": {
@@ -72,8 +72,8 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Kompakt\\TestHelper": "lib/"
+                "psr-4": {
+                    "Kompakt\\TestHelper\\": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -90,7 +90,7 @@
             "keywords": [
                 "testing"
             ],
-            "time": "2014-05-15 15:18:05"
+            "time": "2014-05-16 12:08:03"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -792,9 +792,10 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "kompakt/audio-tools": 20,
+        "kompakt/test-helper": 20
+    },
     "platform": {
         "php": ">=5.3.2"
     },

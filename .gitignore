@@ -1,6 +1,4 @@
 vendor
 composer.phar
-tests/_coverage
-tests/_temp
+temp
 tests/config.php
-!*.gitkeep
