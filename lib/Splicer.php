@@ -10,7 +10,7 @@
 namespace Kompakt\AudioSnippets;
 
 use Kompakt\AudioSnippets\Exception\InvalidArgumentException;
-use Kompakt\AudioTools\SoxiFactory;
+use Kompakt\AudioTools\Factory\SoxiFactory;
 use Kompakt\AudioTools\Runner\SoxRunner;
 
 class Splicer

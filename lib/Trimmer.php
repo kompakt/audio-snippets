@@ -11,7 +11,7 @@ namespace Kompakt\AudioSnippets;
 
 use Kompakt\AudioSnippets\Exception\InvalidArgumentException;
 use Kompakt\AudioTools\Runner\SoxRunner;
-use Kompakt\AudioTools\SoxiFactory;
+use Kompakt\AudioTools\Factory\SoxiFactory;
 
 class Trimmer
 {

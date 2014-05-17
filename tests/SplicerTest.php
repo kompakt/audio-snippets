@@ -12,7 +12,7 @@ namespace Kompakt\AudioSnippets\Tests;
 use Kompakt\AudioSnippets\Splicer;
 use Kompakt\AudioTools\Runner\SoxRunner;
 use Kompakt\AudioTools\Runner\SoxiRunner;
-use Kompakt\AudioTools\SoxiFactory;
+use Kompakt\AudioTools\Factory\SoxiFactory;
 
 class SplicerTest extends \PHPUnit_Framework_TestCase
 {
