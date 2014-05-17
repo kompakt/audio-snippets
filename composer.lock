@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kompakt/audio-tools.git",
-                "reference": "292126ea0b166a27fb28abb0871101de78ab7f9c"
+                "reference": "c375c0c9578e26aa58de6d0fa7974a4cd9d32f23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kompakt/audio-tools/zipball/292126ea0b166a27fb28abb0871101de78ab7f9c",
-                "reference": "292126ea0b166a27fb28abb0871101de78ab7f9c",
+                "url": "https://api.github.com/repos/kompakt/audio-tools/zipball/c375c0c9578e26aa58de6d0fa7974a4cd9d32f23",
+                "reference": "c375c0c9578e26aa58de6d0fa7974a4cd9d32f23",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
             "keywords": [
                 "audio"
             ],
-            "time": "2014-05-17 14:55:15"
+            "time": "2014-05-17 16:20:00"
         }
     ],
     "packages-dev": [
