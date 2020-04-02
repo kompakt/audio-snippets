@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4aa624c7f93920cded4d11a018876d55",
+    "content-hash": "5c242ae8f06fb6499ba7d01503130e78",
     "packages": [
         {
             "name": "kompakt/audio-tools",
