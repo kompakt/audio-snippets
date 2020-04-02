@@ -13,8 +13,9 @@ use Kompakt\AudioSnippets\Trimmer;
 use Kompakt\AudioTools\Runner\SoxRunner;
 use Kompakt\AudioTools\Runner\SoxiRunner;
 use Kompakt\AudioTools\Factory\SoxiFactory;
+use PHPUnit\Framework\TestCase;
 
-class TrimmerTest extends \PHPUnit_Framework_TestCase
+class TrimmerTest extends TestCase
 {
     public function test5Seconds()
     {

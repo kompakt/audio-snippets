@@ -13,8 +13,9 @@ use Kompakt\AudioSnippets\Splicer;
 use Kompakt\AudioTools\Runner\SoxRunner;
 use Kompakt\AudioTools\Runner\SoxiRunner;
 use Kompakt\AudioTools\Factory\SoxiFactory;
+use PHPUnit\Framework\TestCase;
 
-class SplicerTest extends \PHPUnit_Framework_TestCase
+class SplicerTest extends TestCase
 {
     public function test30SecondsWav()
     {
