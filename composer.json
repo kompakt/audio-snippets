@@ -8,7 +8,7 @@
         { "name": "Christian Hoegl", "email": "chrigu@sirprize.me" }
     ],
     "require": {
-        "php": ">=5.3.2",
+        "php": "^7.3",
         "kompakt/audio-tools": "~2.0@dev"
     },
     "require-dev": {
