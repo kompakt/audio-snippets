@@ -60,7 +60,7 @@ class Trimmer
         }
 
         $start = floor(($duration - $snippetLength) / 2);
-        $cmd = sprintf("%s -t wav %s", $inFile, $outFile);
+        $cmd = sprintf("'%s' -t wav '%s'", $inFile, $outFile);
         $cmd = sprintf("%s trim %s %s", $cmd, $start, $snippetLength);
         $cmd = sprintf("%s fade %s %s %s %s", $cmd, $fadeType, $fadeInLength, $snippetLength, $fadeOutLength);
         $this->soxRunner->execute($cmd);

@@ -116,7 +116,7 @@ class Splicer
         $spliceLength = 6;
         $jobId = uniqid();
         $cleanInFile = sprintf("%s/%s-in.wav", $this->tmpDir, $jobId);
-        $this->soxRunner->execute(sprintf("%s -r 44100 -t wav %s", $inFile, $cleanInFile));
+        $this->soxRunner->execute(sprintf("'%s' -r 44100 -t wav %s", $inFile, $cleanInFile));
         
         $soxi = $this->soxiFactory->getInstance($cleanInFile);
         $duration = $soxi->getDuration();
