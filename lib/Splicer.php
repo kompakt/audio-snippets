@@ -21,6 +21,11 @@ class Splicer
 
     public function __construct(SoxRunner $soxRunner, SoxiFactory $soxiFactory, $tmpDir)
     {
+        if (!$tmpDir)
+        {
+            throw new InvalidArgumentException("Temp dir argument can't be empty");
+        }
+
         $info = new \SplFileInfo($tmpDir);
 
         if (!$info->isDir())
@@ -45,7 +50,7 @@ class Splicer
 
     public function getVinylSplices()
     {
-        $snippets = array();
+        $snippets = [];
 
         for ($x = 1; $x <= 9; $x++)
         {
@@ -55,8 +60,13 @@ class Splicer
         return $snippets;
     }
 
-    public function splice($inFile, $outFile, $partLength = 45, $excess = 1, array $splices = array())
+    public function splice($inFile, $outFile, $partLength = 45, $excess = 1, array $splices = [])
     {
+        if (!$inFile)
+        {
+            throw new InvalidArgumentException("Audio file argument can't be empty");
+        }
+
         $info = new \SplFileInfo($inFile);
 
         if (!$info->isFile())
@@ -123,7 +133,7 @@ class Splicer
         $numParts = floor($duration / $partLength);
         $tailLength = $duration - $numParts * $partLength;
         $partStart = 0;
-        $parts = array();
+        $parts = [];
 
         if ($numParts == 0)
         {
@@ -177,7 +187,7 @@ class Splicer
             $this->trimAudio($cleanInFile, $parts[$numParts], $partStart, $lastPartLength);
         }
 
-        $splicedParts = array();
+        $splicedParts = [];
 
         foreach ($parts as $key => $part)
         {

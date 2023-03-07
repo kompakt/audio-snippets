@@ -26,6 +26,11 @@ class Trimmer
 
     public function trim($inFile, $outFile, $snippetLength = 60, $fadeType = 't', $fadeInLength = 3, $fadeOutLength = 3)
     {
+        if (!$inFile)
+        {
+            throw new InvalidArgumentException("Audio file argument can't be empty");
+        }
+
         $info = new \SplFileInfo($inFile);
 
         if (!$info->isFile())
