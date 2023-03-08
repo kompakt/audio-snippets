@@ -19,13 +19,8 @@ class Splicer
     protected $soxiFactory = null;
     protected $tmpDir = null;
 
-    public function __construct(SoxRunner $soxRunner, SoxiFactory $soxiFactory, $tmpDir)
+    public function __construct(SoxRunner $soxRunner, SoxiFactory $soxiFactory, string $tmpDir)
     {
-        if (!$tmpDir)
-        {
-            throw new InvalidArgumentException("Temp dir argument can't be empty");
-        }
-
         $info = new \SplFileInfo($tmpDir);
 
         if (!$info->isDir())
@@ -60,13 +55,8 @@ class Splicer
         return $snippets;
     }
 
-    public function splice($inFile, $outFile, $partLength = 45, $excess = 1, array $splices = [])
+    public function splice(string $inFile, string $outFile, $partLength = 45, $excess = 1, array $splices = [])
     {
-        if (!$inFile)
-        {
-            throw new InvalidArgumentException("Audio file argument can't be empty");
-        }
-
         $info = new \SplFileInfo($inFile);
 
         if (!$info->isFile())
